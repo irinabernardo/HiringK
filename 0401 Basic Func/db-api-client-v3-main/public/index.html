@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="./css/style.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Hiring K</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hiring K</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="login" class="nav-link" href="#" ><span class="oi oi-account-login link-icon"></span>Login</a>                        
+                    </li>
+                        
+                    <li class="nav-item">                        
+                        <a id="get-profile" class="nav-link" href="#"><span class="oi oi-person link-icon"></span>Profile</a>                        
+                    </li>
+                        
+                    <li class="nav-item">                        
+                        <a id="logout" class="nav-link" href="#"><span class="oi oi-account-logout link-icon"></span>Logout</a> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <!-- Page Header -->
+            <h2 class="mt-5">Jobs</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <!-- Page Body Left Column (menu) -->
+                <div id="categoryList" class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">First item</a>
+                    <a href="#" class="list-group-item list-group-item-action">Second item</a>
+                    <a href="#" class="list-group-item list-group-item-action">Third item</a>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <!-- Page Body Right Side (Content goes here) -->
+
+                <div id="jobs">
+
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <!-- <th>id</th> -->
+                                <th>Job id</th>
+                                <th>Position</th>
+                                <th>Description</th>
+                                <th>Start Date</th>
+                                <th>Finish Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="jobRows">
+                            <!-- Job Rows to be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Toggle button used to show or hide the add new job form. -->
+                <button onclick="jobFormSetup('Add Job')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#JobFormDialog"
+                    id="AddJobButton">Add Job
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal forms go here-->
+    <!-- Bootstrap Modal Dialogs-->
+    <!-- Job Form -->
+    <div class="modal fade" id="JobFormDialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="jobFormTitle">Add a Job</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Body - contains form inputs-->
+                <!-- The id of each input matches a Job property -->
+                <div class="modal-body">
+                    <form id="jobForm">
+                        <div class="form-group">
+                            <label for="CategoryId">Category:</label>
+                            <select id="CategoryId" class="form-control" name="CategoryId">
+                            </select>
+                        </div>
+                                               
+                        <div class="form-group">
+                            <label for="JobName">Name:</label>
+                            <input id="JobName" type="text" class="form-control" name="JobName">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="JobDescription">Description:</label>
+                            <input id="JobDescription" type="text" class="form-control" name="JobDescription">
+                        </div>
+                     
+                        <div class="form-group">
+                            <label for="Start_Date">Start_Date:</label>
+
+                            <input id="Start_Date" type="date" class="form-control" name="Start_Date">
+                        </div>
+                        <div class="form-group">
+                            <label for="Finish_Date">Finish_Date:</label>
+                            <input id="Finish_Date" type="date" class="form-control" name="Finish_Date">
+                        </div>
+                        
+                        
+                        <!-- jobId is a hidden field value is not required but set = 0-->
+                        <input id="JobId" type="hidden" name="jobId" value="0">
+                        
+
+ 
+                    </form>
+                </div>
+
+                <!-- footer -->
+                <div class="modal-footer">
+                    <!-- Buttons - note onclick and data-dismiss attribtes-->
+                    <button onclick="addOrUpdateJob()" type="button" class="btn btn-primary"
+                        data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- End Job Form  -->
+
+
+    <!-- Bootstrap 4 Dependencies -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./font/css/open-iconic-bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <!-- Auth0 JavaScript -->
+        <script src="https://cdn.auth0.com/js/auth0/9.14.0/auth0.min.js"></script>
+        <script src="./javascript/auth0-variables.js"></script>
+        <script src="./javascript/jwtAuth.js"></script>
+        <script src="./javascript/jwt-decode.js"></script>
+        <!-- End Auth0 JavaScript -->
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./javascript/script.js"></script>
+</body>
+
+</html>

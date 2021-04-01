@@ -1,0 +1,8 @@
+{   "audience": "https://hiringkapi.com",
+    "issuer": "https://dev-vxkwz45d.eu.auth0.com/",
+    "algorithms": ["RS256"],
+    "create": "create:jobs",
+    "read": "read:jobs",
+    "update": "update:jobs",
+    "delete": "delete:jobs"
+    }
