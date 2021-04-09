@@ -1,0 +1,61 @@
+.hidden {
+    display: none;
+}
+label {
+margin-bottom: 10px;
+display: block;
+}
+
+.navbar {
+min-height: 115px;
+background-color: rgb(17, 17, 17);
+}
+
+.link-icon {
+    margin-right: 0.3em;
+}
+
+.btn {
+    /*background-color: DodgerBlue; /* Blue background */
+    border-right: none; /* Remove borders */
+    background: rgb(56, 129, 238);
+    color: rgb(235, 241, 245); /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: rgb(31, 85, 167);}
+
+.barlogo{height:90px;
+}
+
+.navbar-logo {
+        display: inline-block;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+body {
+        background: linear-gradient(to bottom right,rgb(232, 238, 241),rgb(15, 67, 102));
+    }
+#pageTitle {
+    color: rgb(15, 15, 15);
+    }
+thead{background: rgb(16, 16, 16);}
+
+#categoryBar {
+    border-left-style: ridge ;
+    border-left-color: rgb(121, 121, 126);
+    background: rgb(16, 16, 16);
+}
+
+#showAllbar {
+    background: rgb(16, 16, 16);
+}
